@@ -4,9 +4,9 @@ Esta é a versão inicial do importador
 
 ## Instalação
 
-'''
+```
 npm install
-'''
+```
 
 ## Configuração
 Criar uma API Key do NOTION e definir as permissões de acesso para as bases de dados origem e destino
@@ -16,9 +16,9 @@ Para fazer isso use este link: https://developers.notion.com/docs/create-a-notio
 
 Clonar e instalar o projeto com
 
-'''
+```
 npm install
-'''
+```
 
 na pasta do projeto criar um arquivo .env contendo
 NOTION_API_KEY=<SUA API KEY DO NOTION>
@@ -28,14 +28,14 @@ NOTION_API_KEY=<SUA API KEY DO NOTION>
 Existem 2 metodos de execução: simulação e execução final
 
 ### SIMULACAO
-'''
+```
 npm start <SOURCE_DATABASE_ID> <DESTINATION_DATABASE_ID>
-'''
+```
 
 ### EXECUCAO
-'''
+```
 npm start <SOURCE_DATABASE_ID> <DESTINATION_DATABASE_ID> true
-'''
+```
 
 A execução adicionará os valores na tabela destino
 
