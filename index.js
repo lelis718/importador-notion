@@ -240,22 +240,13 @@ class NotionMigrator {
 }
 
 // Exemplo de uso
-async function main() {
+async function main(sourceDB, destinationDB, simulate=true) {
     const migrator = new NotionMigrator()
-
-    // IDs dos databases (substitua pelos seus)
-    const SOURCE_DB_ID = "2505771415a680078dbee8252a6ab682"
-    const TARGET_DB_ID = "2515771415a680539b71eeceaff282df"
-
     try {
-        // Primeiro execute em modo dry-run para testar
-        await migrator.migrate(SOURCE_DB_ID, TARGET_DB_ID, { 
-            dryRun: false, 
+        await migrator.migrate(sourceDB, destinationDB, { 
+            dryRun: !simulate, 
             batchSize: 10 
         })
-
-        // Depois descomente a linha abaixo para fazer a migração real
-        // await migrator.migrate(SOURCE_DB_ID, TARGET_DB_ID, { batchSize: 10 })
 
     } catch (error) {
         console.error('💥 Falha na migração:', error)
@@ -265,7 +256,10 @@ async function main() {
 // Para usar como módulo
 export default NotionMigrator
 
-// Para executar diretamente
-if (import.meta.url === `file://${process.argv[1]}`) {
-    main()
+if(process.argv.length >= 4) {
+    main(process.argv[2], process.argv[3],process.argv[4]==="true")
+} else {
+    console.log("Utilização: \nnode start source_database_id destination_database_id [true|false(default)]\n - true no final confirmará a execução, false apenas realizará uma simulação");
 }
+
+
