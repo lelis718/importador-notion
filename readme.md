@@ -11,7 +11,7 @@ npm install
 ## Configuração
 Criar uma API Key do NOTION e definir as permissões de acesso para as bases de dados origem e destino
 
-Para fazer isso use este link: https://developers.notion.com/docs/create-a-notion-integration
+Para fazer isso use este link: https://developers.notion.com/docs/authorization
 
 
 Clonar e instalar o projeto com
