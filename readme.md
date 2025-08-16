@@ -27,12 +27,12 @@ NOTION_API_KEY=<SUA API KEY DO NOTION>
 ## Execução
 Existem 2 metodos de execução: simulação e execução final
 
-### SIMULACAO
+### Simulação
 ```
 npm start <SOURCE_DATABASE_ID> <DESTINATION_DATABASE_ID>
 ```
 
-### EXECUCAO
+### Execução
 ```
 npm start <SOURCE_DATABASE_ID> <DESTINATION_DATABASE_ID> true
 ```
